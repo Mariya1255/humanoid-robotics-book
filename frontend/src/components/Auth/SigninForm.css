@@ -21,7 +21,7 @@
 .form-group label {
   margin-bottom: 8px;
   font-weight: 600;
-  color: var(--ifm-color-emphasis-800);
+  color: #f8f7f4; /* Changed from var(--ifm-color-emphasis-800) to white for better visibility */
   font-size: 1rem;
   position: relative;
 }
@@ -33,7 +33,7 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background: linear-gradient(90deg, #556B2F, #6B8E23);
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
   border-radius: 1px;
 }
 
@@ -45,7 +45,7 @@
   border-radius: 12px;
   font-size: 16px;
   background-color: var(--ifm-input-background-color);
-  color: var(--ifm-font-color-base);
+  color: #f8f7f4; /* Changed from var(--ifm-font-color-base) to white for better visibility */
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
@@ -54,9 +54,25 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #556B2F;
-  box-shadow: 0 0 0 3px rgba(85, 107, 47, 0.2);
+  border-color: #00ffff; /* Changed to neon cyan */
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.3); /* Changed to neon glow */
   transform: translateY(-1px);
+}
+
+/* Placeholder text for better visibility */
+.form-group input::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+  color: #cccccc; /* Lighter gray for better visibility against dark background */
+  opacity: 0.8;
+}
+
+/* Dark mode placeholder visibility */
+html[data-theme='dark'] .form-group input::placeholder,
+html[data-theme='dark'] .form-group select::placeholder,
+html[data-theme='dark'] .form-group textarea::placeholder {
+  color: #bbbbbb;
+  opacity: 0.9;
 }
 
 .form-group input.error,
@@ -89,7 +105,7 @@
 }
 
 .signin-button {
-  background: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);
+  background: linear-gradient(135deg, #00ffff 0%, #ff00ff 100%);
   color: white;
   padding: 14px 28px;
   border: none;
@@ -120,9 +136,9 @@
 }
 
 .signin-button:hover {
-  background: linear-gradient(135deg, #6B8E23 0%, #556B2F 100%);
+  background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(85, 107, 47, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
 }
 
 .signin-button:disabled {
@@ -147,11 +163,11 @@
   left: 30%;
   right: 30%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #556B2F, transparent);
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
 }
 
 .form-footer a {
-  color: #556B2F;
+  color: #00ffff;
   text-decoration: none;
   font-weight: 600;
   padding: 8px 16px;
@@ -177,10 +193,10 @@
 }
 
 .form-footer a:hover {
-  background: #556B2F;
+  background: #00ffff;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(85, 107, 47, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
 }
 
 .submit-error {
@@ -203,26 +219,26 @@
 
 /* Dark Mode Styles */
 html[data-theme='dark'] .form-group label {
-  color: var(--ifm-color-emphasis-200);
+  color: #f8f7f4; /* Explicit white color instead of variable */
 }
 
 html[data-theme='dark'] .form-group label::after {
-  background: linear-gradient(90deg, #6B8E23, #8f9e4a);
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
 }
 
 html[data-theme='dark'] .form-group input,
 html[data-theme='dark'] .form-group select,
 html[data-theme='dark'] .form-group textarea {
   background-color: var(--ifm-background-color);
-  color: var(--ifm-font-color-base);
+  color: #f8f7f4; /* Explicit white color instead of variable */
   border-color: var(--ifm-color-emphasis-400);
 }
 
 html[data-theme='dark'] .form-group input:focus,
 html[data-theme='dark'] .form-group select:focus,
 html[data-theme='dark'] .form-group textarea:focus {
-  border-color: #6B8E23;
-  box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.3);
+  border-color: #00ffff;
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.3);
 }
 
 html[data-theme='dark'] .form-footer {
@@ -230,11 +246,11 @@ html[data-theme='dark'] .form-footer {
 }
 
 html[data-theme='dark'] .form-footer a {
-  color: #6B8E23;
+  color: #00ffff;
 }
 
 html[data-theme='dark'] .form-footer a:hover {
-  background: #6B8E23;
+  background: #00ffff;
 }
 
 html[data-theme='dark'] .submit-error {

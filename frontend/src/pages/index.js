@@ -133,21 +133,6 @@ export default function Home() {
       description="AI Robotics Textbook covering ROS 2, Digital Twin simulation, NVIDIA Isaac, VLA and Capstone project">
       <SetDarkModeDefault /> {/* Set dark mode as default */}
 
-      {/* Floating AI Assistant Button */}
-      <button
-        className={clsx(styles.aiAssistantToggle, 'ai-assistant-toggle')}
-        onClick={toggleChatbot}
-        aria-label="Open AI Assistant"
-      >
-        💬
-      </button>
-
-      <ChatbotWindow
-        isOpen={isChatbotOpen}
-        onClose={toggleChatbot}
-        sessionId={null}
-        onSessionIdChange={() => {}}
-      />
 
 
       <header className={clsx('hero hero--primary', styles.heroBanner, styles.heroOlive)}>
@@ -158,24 +143,10 @@ export default function Home() {
           <div className={clsx(styles.heroButtons, 'hero-buttons')}>
             <div>
               <Link
-                className="button button--secondary button--lg"
-                to="/docs/modules/ros2/introduction">
-                Get Started
-              </Link>
-            </div>
-            <div>
-              <Link
                 className="button button--outline button--lg"
                 to="/docs/modules">
-                Browse Modules
+                Get Started
               </Link>
-            </div>
-            <div>
-              <button
-                className={clsx(styles.askAssistantButton, 'button', 'button--olive', 'button--lg')}
-                onClick={toggleChatbot}>
-                Ask AI Assistant
-              </button>
             </div>
           </div>
         </div>

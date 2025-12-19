@@ -56,7 +56,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Home',
+        title: 'Physical AI & Humanoid Robotics',
         logo: {
           alt: 'Physical AI & Humanoid Robotics Logo',
           src: 'img/logo-light.svg',
@@ -66,26 +66,6 @@ const config = {
           {
             to: '/docs/',
             label: 'Textbook',
-            position: 'left',
-          },
-          {
-            to: '/',
-            label: 'Home',
-            position: 'left',
-          },
-          {
-            to: '/docs/modules/',
-            label: 'Modules',
-            position: 'left',
-          },
-          {
-            to: '/docs/exercises/',
-            label: 'Exercises',
-            position: 'left',
-          },
-          {
-            to: '/docs/references/',
-            label: 'Resources',
             position: 'left',
           },
           {

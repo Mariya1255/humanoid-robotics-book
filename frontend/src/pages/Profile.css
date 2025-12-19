@@ -3,12 +3,27 @@
   margin: 20px auto;
   padding: 20px;
   min-height: 80vh;
-  background: var(--ifm-background-color);
-  background: linear-gradient(135deg, #F8F7F4 0%, #E6E2D6 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-html[data-theme='dark'] .profile-page-container {
-  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+.profile-page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05), transparent 25%),
+              radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05), transparent 25%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.profile-page-container > div {
+  position: relative;
+  z-index: 1;
 }
 
 .profile-dashboard {
@@ -16,27 +31,44 @@ html[data-theme='dark'] .profile-page-container {
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  background: var(--ifm-background-color);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
   overflow: hidden;
   min-height: 80vh;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  position: relative;
+}
+
+.profile-dashboard::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff, #ff0080);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0.2;
 }
 
 .sidebar {
   width: 280px;
-  background: var(--ifm-card-background-color);
+  background: rgba(26, 26, 26, 0.6);
   padding: 25px 20px;
-  border-right: 1px solid var(--ifm-color-emphasis-200);
+  border-right: 1px solid rgba(0, 255, 255, 0.3);
   display: flex;
   flex-direction: column;
   gap: 25px;
+  backdrop-filter: blur(10px);
 }
 
 .profile-sidebar-header {
   text-align: center;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
 }
 
 .profile-avatar {
@@ -45,13 +77,20 @@ html[data-theme='dark'] .profile-page-container {
 
 .profile-info h3 {
   margin: 10px 0 5px 0;
-  color: var(--ifm-heading-color);
+  color: #f8f7f4;
   font-size: 1.2rem;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .profile-info p {
   margin: 0;
-  color: var(--ifm-color-emphasis-600);
+  color: #f8f7f4;
+  opacity: 0.8;
   font-size: 0.9rem;
 }
 
@@ -68,45 +107,59 @@ html[data-theme='dark'] .profile-page-container {
   text-align: left;
   cursor: pointer;
   border-radius: 8px;
-  color: var(--ifm-color-emphasis-700);
+  color: #f8f7f4;
   font-weight: 500;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 10px;
+  border: 1px solid transparent;
 }
 
 .nav-item:hover {
-  background-color: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-900);
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
+  border-color: rgba(0, 255, 255, 0.3);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .nav-item.active {
-  background: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);
-  color: white;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(255, 0, 255, 0.2) 100%);
+  color: #00ffff;
+  border-color: rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .main-content {
   flex: 1;
   padding: 30px;
-  background: var(--ifm-background-color);
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(10px);
 }
 
 .profile-header {
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
 }
 
 .profile-header h1 {
   margin: 0 0 10px 0;
-  color: var(--ifm-heading-color);
+  color: #f8f7f4;
   font-size: 1.8rem;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .profile-header p {
   margin: 0;
-  color: var(--ifm-color-emphasis-600);
+  color: #f8f7f4;
+  opacity: 0.8;
   font-size: 1rem;
 }
 
@@ -117,7 +170,7 @@ html[data-theme='dark'] .profile-page-container {
 .profile-section {
   margin-bottom: 40px;
   padding-bottom: 25px;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
 }
 
 .profile-section:last-child {
@@ -127,10 +180,16 @@ html[data-theme='dark'] .profile-page-container {
 }
 
 .profile-section h2 {
-  color: var(--ifm-heading-color);
+  color: #f8f7f4;
   margin-bottom: 20px;
   font-size: 1.4rem;
   position: relative;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .profile-section h2::after {
@@ -140,70 +199,79 @@ html[data-theme='dark'] .profile-page-container {
   left: 0;
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, #556B2F, #6B8E23);
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
   border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .user-info {
-  background-color: var(--ifm-color-emphasis-100);
+  background: rgba(26, 26, 26, 0.8);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 15px;
   margin-bottom: 25px;
-  border-left: 4px solid #556B2F;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .user-info p {
   margin: 8px 0;
-  color: var(--ifm-color-emphasis-800);
+  color: #f8f7f4;
   font-size: 1rem;
   display: flex;
   justify-content: space-between;
+  opacity: 0.9;
 }
 
 .user-info strong {
-  color: var(--ifm-heading-color);
+  color: #00ffff;
   font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .hardware-info,
 .progress-info,
 .settings-info {
-  background-color: var(--ifm-color-emphasis-100);
+  background: rgba(26, 26, 26, 0.8);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 15px;
   margin-bottom: 25px;
-  border-left: 4px solid #C4A484;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid rgba(255, 0, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 255, 0.2);
 }
 
 .hardware-info p,
 .progress-info p,
 .settings-info p {
   margin: 8px 0;
-  color: var(--ifm-color-emphasis-800);
+  color: #f8f7f4;
   font-size: 1rem;
   display: flex;
   justify-content: space-between;
+  opacity: 0.9;
 }
 
 .hardware-info strong,
 .progress-info strong,
 .settings-info strong {
-  color: var(--ifm-heading-color);
+  color: #ff00ff;
   font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
 }
 
 .back-to-home {
   text-align: center;
   margin-top: 30px;
   padding-top: 25px;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-top: 1px solid rgba(0, 255, 255, 0.3);
   position: relative;
 }
 
 .back-to-home a {
-  color: #556B2F;
+  color: #00ffff;
   text-decoration: none;
   font-weight: 600;
   padding: 8px 16px;
@@ -211,13 +279,31 @@ html[data-theme='dark'] .profile-page-container {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.back-to-home a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.back-to-home a:hover::before {
+  left: 100%;
 }
 
 .back-to-home a:hover {
-  background: #556B2F;
+  background: rgba(0, 255, 255, 0.2);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(85, 107, 47, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .profile-loading,
