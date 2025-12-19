@@ -1,0 +1,1244 @@
+/* Custom CSS for Physical AI & Humanoid Robotics Textbook */
+
+/* Ensure dark mode consistency across the site */
+html[data-theme='dark'] {
+  --ifm-color-primary: #007bff;
+  --ifm-color-primary-dark: #0056b3;
+  --ifm-color-primary-darker: #004085;
+  --ifm-color-primary-darkest: #002b55;
+  --ifm-color-primary-light: #3395ff;
+  --ifm-color-primary-lighter: #66aeff;
+  --ifm-color-primary-lightest: #99c7ff;
+  --ifm-color-secondary: #6c757d;
+  --ifm-color-success: #28a745;
+  --ifm-color-info: #17a2b8;
+  --ifm-color-warning: #ffc107;
+  --ifm-color-danger: #dc3545;
+  --ifm-color-light: #f8f9fa;
+  --ifm-color-dark: #343a40;
+  --ifm-code-font-size: 95%;
+}
+
+/* Primary color override */
+:root {
+  --ifm-color-primary: #007bff;
+  --ifm-color-primary-dark: #0056b3;
+  --ifm-color-primary-darker: #004085;
+  --ifm-color-primary-darkest: #002b55;
+  --ifm-color-primary-light: #3395ff;
+  --ifm-color-primary-lighter: #66aeff;
+  --ifm-color-primary-lightest: #99c7ff;
+  --ifm-code-font-size: 95%;
+}
+
+/* Card Styles with enhanced design */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme='dark'] .card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] .card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Accented Border Classes */
+.border-accent--green {
+  border: 2px solid #28a745 !important;
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: var(--ifm-background-color);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.1);
+}
+
+.border-accent--yellow {
+  border: 2px solid #ffc107 !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: var(--ifm-background-color);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.1);
+}
+
+.border-accent--red {
+  border: 2px solid #dc3545 !important;
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: var(--ifm-background-color);
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.1);
+}
+
+.border-accent--purple {
+  border: 2px solid #6f42c1 !important;
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: var(--ifm-background-color);
+  box-shadow: 0 4px 15px rgba(111, 66, 193, 0.1);
+}
+
+html[data-theme='dark'] .border-accent--green {
+  border-color: #28a745 !important;
+  background-color: #1e2d21;
+}
+
+html[data-theme='dark'] .border-accent--yellow {
+  border-color: #ffc107 !important;
+  background-color: #2d2d1e;
+}
+
+html[data-theme='dark'] .border-accent--red {
+  border-color: #dc3545 !important;
+  background-color: #2d1e21;
+}
+
+html[data-theme='dark'] .border-accent--purple {
+  border-color: #6f42c1 !important;
+  background-color: #211e2d;
+}
+
+/* Module Card Color Variants */
+.card--blue {
+  border-top: 4px solid #007bff;
+}
+
+.card--green {
+  border-top: 4px solid #28a745;
+}
+
+.card--purple {
+  border-top: 4px solid #6f42c1;
+}
+
+.card--yellow {
+  border-top: 4px solid #ffc107;
+}
+
+.card--red {
+  border-top: 4px solid #dc3545;
+}
+
+/* Specific card styling */
+.card-demo {
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+html[data-theme='dark'] .card-demo {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Auth Page Specific Styles */
+.auth-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 500px;
+  background: var(--ifm-background-color);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--ifm-color-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+}
+
+.auth-form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-form-icon {
+  margin: 0 auto 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 86, 179, 0.1));
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.auth-form-title {
+  font-size: 2rem;
+  color: var(--ifm-heading-color);
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.auth-form-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  border-radius: 2px;
+}
+
+.auth-form-description {
+  text-align: center;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.auth-links-section {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 2px solid var(--ifm-color-emphasis-200);
+  position: relative;
+}
+
+.auth-links-section::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 40%;
+  right: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ifm-color-primary), transparent);
+}
+
+.auth-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.auth-link {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.auth-link:hover::before {
+  left: 100%;
+}
+
+.auth-link:hover {
+  background: var(--ifm-color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.back-to-home-link {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.back-to-home-link a {
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-to-home-link a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.back-to-home-link a:hover::before {
+  left: 100%;
+}
+
+.back-to-home-link a:hover {
+  background: var(--ifm-color-emphasis-700);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Group Styles for Auth Pages */
+.auth-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.auth-form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+  position: relative;
+}
+
+.auth-form-group label::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  border-radius: 1px;
+}
+
+.auth-form-group input,
+.auth-form-group select,
+.auth-form-group textarea {
+  padding: 14px;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: var(--ifm-input-background-color);
+  color: var(--ifm-font-color-base);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.auth-form-group input:focus,
+.auth-form-group select:focus,
+.auth-form-group textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.auth-form-group input.error,
+.auth-form-group select.error,
+.auth-form-group textarea.error {
+  border-color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.auth-error-message {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.auth-error-message::before {
+  content: '⚠';
+  font-size: 1rem;
+}
+
+.auth-success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0fff0 0%, #f0f9ff 100%);
+}
+
+html[data-theme='dark'] .auth-success-container {
+  background: linear-gradient(135deg, #0a291a 0%, #0a1929 100%);
+}
+
+.auth-success-content {
+  max-width: 500px;
+  text-align: center;
+}
+
+.auth-success-icon {
+  margin: 0 auto 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(30, 126, 52, 0.1));
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.auth-success-icon svg {
+  width: 100%;
+  height: 100%;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+/* Enhanced typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--ifm-heading-color);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--ifm-heading-color);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border-radius: 2px;
+}
+
+html[data-theme='dark'] h2::after {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--ifm-heading-color);
+}
+
+/* Button styles */
+.button {
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  border: none;
+}
+
+.button--primary:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.button--secondary {
+  background: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.button--secondary:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.button--outline {
+  background: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.button--outline:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Showcase Homepage Styles - Only for the main index/homepage */
+/* Target homepage text elements to ensure they appear properly in dark mode */
+html[data-theme="dark"] main article *,
+html[data-theme="dark"] main section *,
+html[data-theme="dark"] main .container *,
+html[data-theme="dark"] main .container .section *,
+html[data-theme="dark"] main .hero__subtitle,
+html[data-theme="dark"] main .heroBanner p,
+html[data-theme="dark"] main .section p,
+html[data-theme="dark"] main .section ul,
+html[data-theme="dark"] main .section li,
+html[data-theme="dark"] main .section div,
+html[data-theme="dark"] main .featureList p,
+html[data-theme="dark"] main .featureList li,
+html[data-theme="dark"] main .featureList div,
+html[data-theme="dark"] main .col--8 *,
+html[data-theme="dark"] main .col--4 *,
+html[data-theme="dark"] main .col--6 *,
+html[data-theme="dark"] main .col--10 * {
+  color: rgba(255, 255, 255, 0.95) !important;
+  /* Ensure text is fully white in dark mode on homepage */
+}
+
+/* Override any specific text elements that might be dark */
+html[data-theme="dark"] main .container article,
+html[data-theme="dark"] main .container article .col--8,
+html[data-theme="dark"] main .container article .col--4,
+html[data-theme="dark"] main .container article .col--6,
+html[data-theme="dark"] main .container article .col--10,
+html[data-theme="dark"] main .row,
+html[data-theme="dark"] main .container.padding-horiz--md {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Showcase boxes for all main sections on homepage */
+html[data-theme="dark"] main .container.padding-horiz--md {
+  border: 2px solid #007bff; /* Distinct blue border */
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 2.5rem;
+  background-color: rgba(30, 30, 40, 0.85); /* Darker background in dark mode */
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+html[data-theme="dark"] main .container.padding-horiz--md:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* For light mode - showcase styling */
+main .container.padding-horiz--md {
+  border: 2px solid #007bff; /* Distinct blue border */
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.95); /* Light background in light mode */
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main .container.padding-horiz--md:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+/* Enhanced section headings with clear distinction from body content */
+main .container.padding-horiz--md h2.text--center {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Blue gradient background */
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white !important;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 1.8rem;
+  position: relative;
+  border: 2px solid #0056b3;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  font-size: 1.4em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  text-align: center;
+}
+
+/* Dark mode for section headings (already has good contrast due to gradient) */
+html[data-theme="dark"] main .container.padding-horiz--md h2.text--center {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white !important;
+  border: 2px solid #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Remove the separator line since we're using a full-width header background */
+main .container.padding-horiz--md h2.text--center::after {
+  display: none;
+}
+
+/* Styling for showcase content blocks */
+main .container.padding-horiz--md .row {
+  margin-top: 1.5rem;
+}
+
+/* Card-like styling for module cards specifically */
+html[data-theme="dark"] main .card-demo,
+html[data-theme="dark"] main .card {
+  border: 2px solid #007bff !important; /* Blue border for all cards on homepage */
+  border-radius: 8px;
+  background-color: rgba(40, 40, 50, 0.9) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+html[data-theme="dark"] main .card-demo:hover,
+html[data-theme="dark"] main .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4) !important;
+}
+
+/* Light mode for cards */
+main .card-demo,
+main .card {
+  border: 2px solid #007bff !important; /* Blue border for all cards on homepage */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main .card-demo:hover,
+main .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Enhanced details/summary elements for weekly breakdown */
+html[data-theme="dark"] main details {
+  background-color: rgba(35, 35, 45, 0.9) !important;
+  border: 2px solid #007bff !important;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+html[data-theme="dark"] main summary {
+  color: white !important;
+  cursor: pointer;
+  padding: 10px;
+  background: linear-gradient(to right, rgba(0, 123, 255, 0.3), transparent) !important;
+  border-radius: 5px;
+  font-weight: 600;
+  outline: none;
+}
+
+main details {
+  background-color: rgba(248, 249, 250, 0.95) !important;
+  border: 2px solid #007bff !important;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+main summary {
+  color: #0056b3 !important;
+  cursor: pointer;
+  padding: 10px;
+  background: linear-gradient(to right, rgba(0, 123, 255, 0.1), transparent) !important;
+  border-radius: 5px;
+  font-weight: 600;
+  outline: none;
+}
+
+/* Ensure body text is readable in both modes */
+html[data-theme="dark"] main p,
+html[data-theme="dark"] main li,
+html[data-theme="dark"] main div,
+html[data-theme="dark"] main span {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+main p,
+main li,
+main div,
+main span {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+/* Specific styling for module cards' Learn More buttons */
+html[data-theme="dark"] main .card .button--secondary {
+  background-color: #000000 !important; /* Black background in dark mode */
+  border-color: #000000 !important;
+  color: #ffffff !important; /* White text in dark mode */
+}
+
+html[data-theme="dark"] main .card .button--secondary:hover {
+  background-color: #333333 !important; /* Slightly lighter on hover */
+  border-color: #333333 !important;
+  transform: scale(1.05);
+}
+
+/* Light mode styling for Learn More buttons with gradient */
+main .card .button--secondary {
+  background: radial-gradient(circle at center, #62cff4 0%, #070B35 100%) !important;
+  border: none !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+main .card .button--secondary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific styling for the "Explore All Modules" button to have black text in light mode */
+/* Target the button in the CTA section that links to all modules */
+main .ctaSection .buttons a.button--secondary.button--lg,
+main .container.text--center .buttons a.button--secondary.button--lg:nth-child(2),
+main .container.text--center .buttons .button--secondary.button--lg:nth-child(2) {
+  color: #000000 !important; /* Set text to black in light mode for Explore All Modules button */
+}
+
+/* Maintain white text in dark mode for proper visibility */
+html[data-theme="dark"] main .ctaSection .buttons a.button--secondary.button--lg,
+html[data-theme="dark"] main .container.text--center .buttons a.button--secondary.button--lg:nth-child(2),
+html[data-theme="dark"] main .container.text--center .buttons .button--secondary.button--lg:nth-child(2) {
+  color: #ffffff !important; /* Keep white text in dark mode to maintain readability */
+}
+
+/* Dark mode will be set as default via JavaScript */
+
+/* Specific styling for the details/summary elements (expandable sections) */
+html[data-theme="dark"] details {
+  background-color: rgba(30, 30, 30, 0.8) !important;
+  border: 1px solid #4a86e8;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+html[data-theme="dark"] summary {
+  color: white !important;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgba(26, 35, 126, 0.6);
+  border-radius: 3px;
+}
+
+details {
+  background-color: rgba(240, 240, 240, 0.7);
+  border: 1px solid #4a86e8;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+summary {
+  color: #0d47a1;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgba(227, 242, 253, 0.6);
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* Showcase-Style Course Layout for All Pages with Module Sequence */
+
+/* Course Title & Overview Styling */
+.course-title-section {
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.course-title-section h1 {
+  color: white !important;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.course-title-section .focus-theme,
+.course-title-section .course-goal {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+html[data-theme="dark"] .course-title-section {
+  background: linear-gradient(135deg, #003d82, #0056b3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Quarter Overview Styling */
+.quarter-overview-section {
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 2rem;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+html[data-theme="dark"] .quarter-overview-section {
+  background-color: var(--ifm-color-emphasis-900);
+  border: 2px solid #4a86e8;
+}
+
+/* Module Sequence Styling */
+.module-sequence-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.module-card {
+  background-color: var(--ifm-background-surface-color);
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .module-card {
+  background-color: var(--ifm-background-surface-color);
+  border: 2px solid #4a86e8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+html[data-theme="dark"] .module-card:hover {
+  box-shadow: 0 8px 15px rgba(74, 134, 232, 0.4);
+}
+
+.module-card h2 {
+  color: #0056b3 !important;
+  font-size: 1.8rem;
+  margin-top: 0;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #007bff;
+  margin-bottom: 1rem;
+}
+
+html[data-theme="dark"] .module-card h2 {
+  color: #64b5f6 !important;
+  border-bottom: 2px solid #4a86e8;
+}
+
+.module-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.module-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Learning Outcomes Styling */
+.learning-outcomes-section {
+  background-color: var(--ifm-color-emphasis-100);
+  border-left: 5px solid #28a745;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+html[data-theme="dark"] .learning-outcomes-section {
+  background-color: var(--ifm-color-emphasis-900);
+  border-left: 5px solid #4caf50;
+}
+
+/* Weekly Breakdown Styling */
+.weekly-breakdown-section {
+  background-color: var(--ifm-color-emphasis-100);
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+html[data-theme="dark"] .weekly-breakdown-section {
+  background-color: var(--ifm-color-emphasis-900);
+  border: 1px solid #ffca28;
+}
+
+.weekly-breakdown-section h3 {
+  color: #856404 !important;
+  margin-top: 0;
+}
+
+html[data-theme="dark"] .weekly-breakdown-section h3 {
+  color: #ffcc80 !important;
+}
+
+/* Assessment Section Styling */
+.assessment-section {
+  background-color: var(--ifm-color-emphasis-100);
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+html[data-theme="dark"] .assessment-section {
+  background-color: var(--ifm-color-emphasis-900);
+  border: 1px solid #f44336;
+}
+
+.assessment-section h3 {
+  color: #721c24 !important;
+  margin-top: 0;
+}
+
+html[data-theme="dark"] .assessment-section h3 {
+  color: #ef9a9a !important;
+}
+
+/* Hardware Requirements Styling */
+.hardware-requirements-section {
+  background-color: var(--ifm-color-emphasis-100);
+  border: 1px solid #6f42c1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+html[data-theme="dark"] .hardware-requirements-section {
+  background-color: var(--ifm-color-emphasis-900);
+  border: 1px solid #ab47bc;
+}
+
+.hardware-requirements-section h3 {
+  color: #4d2687 !important;
+  margin-top: 0;
+}
+
+html[data-theme="dark"] .hardware-requirements-section h3 {
+  color: #b39ddb !important;
+}
+
+/* Enhanced header and text styling for consistency across all pages */
+.markdown h1 {
+  font-size: 2.2rem;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.markdown h2 {
+  font-size: 1.8rem;
+  color: #0056b3 !important;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+  color: #007bff !important;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.markdown h4 {
+  color: #007bff !important;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+html[data-theme="dark"] .markdown h1 {
+  border-bottom: 3px solid #4a86e8;
+}
+
+html[data-theme="dark"] .markdown h2 {
+  color: #64b5f6 !important;
+}
+
+html[data-theme="dark"] .markdown h3 {
+  color: #4a86e8 !important;
+}
+
+html[data-theme="dark"] .markdown h4 {
+  color: #4a86e8 !important;
+}
+
+/* Body text styling for readability */
+.markdown p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Enhanced list styling */
+.markdown ul, .markdown ol {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.markdown li {
+  margin-bottom: 0.3rem;
+}
+
+/* Card-style styling for content sections */
+.content-card {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+html[data-theme="dark"] .content-card {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid #4a5568;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Critical information highlighting */
+.critical-info {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+html[data-theme="dark"] .critical-info {
+  background-color: rgba(255, 204, 40, 0.2);
+  border-left: 4px solid #ffca28;
+}
+
+/* Homepage hero banner styling */
+.heroBanner {
+  padding: 2rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--ifm-hero-background-color, #2b3137);
+  color: var(--ifm-hero-text-color, white);
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.getStarted {
+  margin: 1rem;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureImage {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.featureSection {
+  padding: 3rem 0;
+}
+
+.featureCard {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--ifm-card-background-color, #f6f6f6);
+  margin-bottom: 1rem;
+  border: 2px solid #007bff; /* Add blue border */
+}
+
+html[data-theme='dark'] .featureCard {
+  background-color: var(--ifm-card-background-color, #2d2d2d);
+}
+
+@media screen and (min-width: 997px) {
+  .featureCard {
+    height: 100%;
+  }
+}
+
+.featureCard h3 {
+  margin-top: 0;
+}
+
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.moduleCard {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--ifm-card-background-color, #fafafa);
+  border: 2px solid #007bff !important; /* Blue border for module cards */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+html[data-theme='dark'] .moduleCard {
+  background-color: var(--ifm-card-background-color, #2d2d2d);
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+html[data-theme='dark'] .moduleCard:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.heroBannerLogo {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Consistent dark mode for sections */
+.section {
+  padding: 4rem 0;
+  background-color: var(--ifm-background-color, #f9f9f9);
+  color: var(--ifm-color-emphasis-900, rgba(0, 0, 0, 0.9));
+}
+
+html[data-theme='dark'] .section {
+  background-color: var(--ifm-background-color, #171717);
+  color: var(--ifm-color-emphasis-100, rgba(255, 255, 255, 0.9));
+}
+
+/* Card styling for consistency across the site */
+.card__body {
+  padding: 1.5rem;
+  color: var(--ifm-color-emphasis-900, rgba(0, 0, 0, 0.9));
+}
+
+html[data-theme='dark'] .card__body {
+  color: var(--ifm-color-emphasis-100, rgba(255, 255, 255, 0.9));
+}
+
+.card__footer {
+  padding: 1rem 1.5rem;
+  background-color: var(--ifm-color-emphasis-100, #f8f9fa);
+  border-top: 1px solid var(--ifm-color-emphasis-300, #e9ecef);
+  border-radius: 0 0 0.5rem 0.5rem;
+  color: var(--ifm-color-emphasis-900, rgba(0, 0, 0, 0.9));
+}
+
+html[data-theme='dark'] .card__footer {
+  background-color: var(--ifm-color-emphasis-900, #2d2d2d);
+  border-top: 1px solid var(--ifm-color-emphasis-700, #454545);
+  color: var(--ifm-color-emphasis-100, rgba(255, 255, 255, 0.9));
+}
+:root {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-code-font-size: 95%;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}

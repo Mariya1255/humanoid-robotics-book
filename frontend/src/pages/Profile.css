@@ -1,0 +1,305 @@
+.profile-page-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  min-height: 80vh;
+  background: var(--ifm-background-color);
+  background: linear-gradient(135deg, #F8F7F4 0%, #E6E2D6 100%);
+}
+
+html[data-theme='dark'] .profile-page-container {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+}
+
+.profile-dashboard {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--ifm-background-color);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 80vh;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--ifm-card-background-color);
+  padding: 25px 20px;
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.profile-sidebar-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.profile-avatar {
+  margin: 0 auto 15px;
+}
+
+.profile-info h3 {
+  margin: 10px 0 5px 0;
+  color: var(--ifm-heading-color);
+  font-size: 1.2rem;
+}
+
+.profile-info p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-item {
+  padding: 12px 15px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-item:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background: var(--ifm-background-color);
+}
+
+.profile-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.profile-header h1 {
+  margin: 0 0 10px 0;
+  color: var(--ifm-heading-color);
+  font-size: 1.8rem;
+}
+
+.profile-header p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 1rem;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.profile-section {
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.profile-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.profile-section h2 {
+  color: var(--ifm-heading-color);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.profile-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #556B2F, #6B8E23);
+  border-radius: 1px;
+}
+
+.user-info {
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border-left: 4px solid #556B2F;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-info p {
+  margin: 8px 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info strong {
+  color: var(--ifm-heading-color);
+  font-weight: 600;
+}
+
+.hardware-info,
+.progress-info,
+.settings-info {
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border-left: 4px solid #C4A484;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hardware-info p,
+.progress-info p,
+.settings-info p {
+  margin: 8px 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hardware-info strong,
+.progress-info strong,
+.settings-info strong {
+  color: var(--ifm-heading-color);
+  font-weight: 600;
+}
+
+.back-to-home {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  position: relative;
+}
+
+.back-to-home a {
+  color: #556B2F;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-to-home a:hover {
+  background: #556B2F;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(85, 107, 47, 0.3);
+}
+
+.profile-loading,
+.profile-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.profile-error {
+  color: #dc3545;
+}
+
+/* Dark Mode Styles */
+html[data-theme='dark'] .profile-dashboard {
+  background: var(--ifm-background-color);
+}
+
+html[data-theme='dark'] .sidebar {
+  background: var(--ifm-card-background-color);
+  border-right: 1px solid var(--ifm-color-emphasis-500);
+}
+
+html[data-theme='dark'] .main-content {
+  background: var(--ifm-background-color);
+}
+
+html[data-theme='dark'] .profile-header {
+  border-bottom: 1px solid var(--ifm-color-emphasis-500);
+}
+
+html[data-theme='dark'] .profile-section {
+  border-bottom: 1px solid var(--ifm-color-emphasis-500);
+}
+
+html[data-theme='dark'] .user-info,
+html[data-theme='dark'] .hardware-info,
+html[data-theme='dark'] .progress-info,
+html[data-theme='dark'] .settings-info {
+  background-color: var(--ifm-color-emphasis-700);
+  border-left-color: #6B8E23;
+}
+
+html[data-theme='dark'] .nav-item {
+  color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .nav-item:hover {
+  background-color: var(--ifm-color-emphasis-600);
+  color: var(--ifm-color-emphasis-100);
+}
+
+html[data-theme='dark'] .nav-item.active {
+  background: linear-gradient(135deg, #6B8E23 0%, #8f9e4a 100%);
+}
+
+html[data-theme='dark'] .profile-info h3 {
+  color: var(--ifm-color-emphasis-100);
+}
+
+html[data-theme='dark'] .profile-info p {
+  color: var(--ifm-color-emphasis-400);
+}
+
+html[data-theme='dark'] .user-info p,
+html[data-theme='dark'] .hardware-info p,
+html[data-theme='dark'] .progress-info p,
+html[data-theme='dark'] .settings-info p {
+  color: var(--ifm-color-emphasis-200);
+}
+
+html[data-theme='dark'] .user-info strong,
+html[data-theme='dark'] .hardware-info strong,
+html[data-theme='dark'] .progress-info strong,
+html[data-theme='dark'] .settings-info strong {
+  color: var(--ifm-color-emphasis-100);
+}
+
+html[data-theme='dark'] .back-to-home {
+  border-top: 1px solid var(--ifm-color-emphasis-500);
+}
+
